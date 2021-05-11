@@ -32,116 +32,7 @@ namespace RPOLab
                 SelectionMode = ListViewSelectionMode.None,
                 ItemTemplate = new DataTemplate(() =>
                 {
-                    
-                    Image image = new Image()
-                    {
-                        BackgroundColor = Color.White,
-                        WidthRequest = 100,
-                        HeightRequest = 100,
-                        Aspect = Aspect.Fill
-                    };
-
-                    image.SetBinding(Image.SourceProperty, "ImageUrl");
-
-                    Frame frame = new Frame()
-                    {
-                        HasShadow = true,
-                        Padding = 0,
-                        CornerRadius = 20,
-                        Content = image
-                    };
-
-                    StackLayout layout = new StackLayout();
-
-                    var nameLabel = new Label()
-                    {
-                        FontAttributes = FontAttributes.Bold,
-                        FontFamily = "Arial",
-                        FontSize = 8,
-                        TextColor = Color.DarkGreen,
-                        Margin = new Thickness(2, 2, 2, 0),
-                        Text = Strings.Strings.NewPage_Name,
-                    };
-                    layout.Children.Add(nameLabel);
-
-
-                    var name = new Label()
-                    {
-                        FontAttributes = FontAttributes.Bold,
-                        FontFamily = "Arial",
-                        FontSize = 14,
-                        TextColor = Color.DarkGreen,
-                        Margin = new Thickness(2, 2, 2, 0),
-                        BackgroundColor = Color.White,
-                    };
-                    name.SetBinding(Label.TextProperty, "Name");
-                    layout.Children.Add(name);
-
-
-                    var yearLabel = new Label()
-                    {
-                        FontAttributes = FontAttributes.Bold,
-                        FontFamily = "Arial",
-                        FontSize = 8,
-                        TextColor = Color.DarkGreen,
-                        Margin = new Thickness(2, 2, 2, 0),
-                        Text = Strings.Strings.NewPage_Year,
-                        TabIndex = 2
-                    };
-                    layout.Children.Add(yearLabel);
-
-
-                    var year = new Label()
-                    {
-                        FontAttributes = FontAttributes.None,
-                        FontFamily = "Arial",
-                        FontSize = 10,
-                        Margin = new Thickness(2, 0, 2, 2),
-                        TextColor = Color.DarkGreen,
-                        TabIndex = 3
-                    };
-                    year.SetBinding(Label.TextProperty, "Year");
-                    layout.Children.Add(year);
-
-
-                    var producerLabel = new Label()
-                    {
-                        FontAttributes = FontAttributes.Bold,
-                        FontFamily = "Arial",
-                        FontSize = 8,
-                        TextColor = Color.DarkGreen,
-                        Margin = new Thickness(2, 2, 2, 0),
-                        Text = Strings.Strings.NewPage_Producer,
-                        TabIndex = 4
-                    };
-                    layout.Children.Add(producerLabel);
-
-
-                    var producer = new Label()
-                    {
-                        FontAttributes = FontAttributes.None,
-                        FontFamily = "Arial",
-                        FontSize = 10,
-                        Margin = new Thickness(2, 0, 2, 2),
-                        TextColor = Color.DarkGreen,
-                        TabIndex = 5
-                    };
-                    year.SetBinding(Label.TextProperty, "Producer");
-                    layout.Children.Add(producer);
-
-
-                    layout.Margin = new Thickness(10, 0, 0, 0);
-                    layout.Padding = new Thickness(0, 0, 0, 0);
-                    layout.Spacing = 0;
-
-                    var result = new FlexLayout();
-                    result.BackgroundColor = Color.Turquoise;
-                    result.Margin = 0;
-                    result.Padding = 4;
-                    result.Children.Add(frame);
-                    result.Children.Add(layout);
-
-                    
+                    var filmItem = new RPOLab.Views.FilmView();
                     return new ViewCell()
                     {
                         View = new Frame()
@@ -149,13 +40,10 @@ namespace RPOLab
                             HasShadow = true,
                             Margin = new Thickness(2, 4, 2, 4),
                             Padding = 0,
-                            Content = result,
+                            Content = filmItem,
                             CornerRadius = 20
-                        },
-
-                        
+                        },       
                     };
-
                 })
             };
 

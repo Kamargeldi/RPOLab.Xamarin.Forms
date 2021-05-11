@@ -28,7 +28,7 @@
                Margin="10, 10, 10, 10"
                >
             <StackLayout x:Name="filmContainer">
-
+                
             </StackLayout>
         </Frame>
     </StackLayout>

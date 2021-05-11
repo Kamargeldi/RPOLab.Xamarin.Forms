@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RPOLab.Strings"
+             mc:Ignorable="d"
+             x:Class="RPOLab.Views.FilmView">
+  <ContentView.Content>
+        <StackLayout
+            Orientation="Horizontal"
+            Padding="4"
+            Margin="0">
+            <Frame
+                HasShadow = "true"
+                Padding = "0"
+                CornerRadius = "20"
+                >
+                <Image
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    BackgroundColor ="White"
+                    Aspect= "AspectFill"
+                    Source="{Binding ImageUrl}"
+                />
+            </Frame>
+
+
+            <StackLayout
+                Margin="5, 0, 0, 0"
+                WidthRequest="170"
+                >
+                <FlexLayout>
+                    <Label FontAttributes="Bold"
+                           FontSize="Small"
+                           Margin="0, 0, 10, 0"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static local:Strings.NewPage_Name}"/>
+                                <Span Text=":"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="{Binding Name}"
+                           LineBreakMode="TailTruncation"/>
+                </FlexLayout>
+                <FlexLayout>
+                    <Label FontAttributes="Bold"
+                           FontSize="Small"
+                           Margin="0, 0, 10, 0"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static local:Strings.NewPage_Year}"/>
+                                <Span Text=":"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="{Binding Year}"
+                           LineBreakMode="TailTruncation"/>
+                </FlexLayout>
+                <FlexLayout>
+                    <Label FontAttributes="Bold"
+                           FontSize="Small"
+                           Margin="0, 0, 10, 0"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static local:Strings.NewPage_Producer}"/>
+                                <Span Text=":"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="{Binding Producer}"
+                           LineBreakMode="TailTruncation"/>
+                </FlexLayout>
+            </StackLayout>
+            <StackLayout>
+                
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
