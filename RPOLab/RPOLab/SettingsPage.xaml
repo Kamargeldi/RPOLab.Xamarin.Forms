@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RPOLab.Strings"
+             mc:Ignorable="d"
+             x:Class="RPOLab.SettingsPage"
+             Title="{x:Static local:Strings.SettingsPage_Title}"
+             >
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <StackLayout>
+                <Label Text="{x:Static local:Strings.SettingsPage_FontName}"
+                   Margin="40, 80, 40, 10"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+                <Frame Margin="40, 10, 40, 10"
+                   CornerRadius="7"
+                   Padding="20, 2, 20, 2"
+                   HasShadow="True">
+                    <Picker x:Name="fontNamePicker" 
+                    >
+
+                    </Picker>
+                </Frame>
+
+                <Label Text="{x:Static local:Strings.SettingsPage_FontSize}"
+                   Margin="40, 10, 40, 10"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   />
+
+                <Frame CornerRadius="7"
+                   Margin="40, 10, 40, 10"
+                   Padding="20, 2, 20, 2"
+                   HasShadow="True"
+                   >
+                    <Picker x:Name="fontSizePicker"
+                    >
+
+                    </Picker>
+                </Frame>
+
+
+                <Label Text="{x:Static local:Strings.SettingsPage_Language}"
+                   Margin="40, 10, 40, 10"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   />
+
+                <Frame CornerRadius="7"
+                   Margin="40, 10, 40, 10"
+                   Padding="20, 2, 20, 2"
+                   HasShadow="True"
+                   >
+                    <Picker x:Name="languagePicker"
+                    >
+
+                    </Picker>
+                </Frame>
+
+                <Frame CornerRadius="7"
+                   Margin="40, 10, 40, 10"
+                   Padding="20, 2, 20, 2"
+                   HasShadow="True"
+                   >
+                    <FlexLayout>
+                        <CheckBox IsChecked="False"
+                          x:Name="darkModeCheker"
+                      />
+                        <Label Text="{x:Static local:Strings.SettingsPage_DarkMode}"
+                           FontFamily="Arial"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           />
+                    </FlexLayout>
+                </Frame>
+                <Button x:Name="saveSettingsButton"
+                    Text="{x:Static local:Strings.SettingsPage_Save}"
+                    Margin="40, 10, 40, 10"
+                    BackgroundColor="DarkTurquoise"
+                    CornerRadius="5"
+                    Clicked="saveSettingsButton_Clicked"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

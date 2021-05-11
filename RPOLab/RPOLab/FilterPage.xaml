@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RPOLab.Strings"
+             mc:Ignorable="d"
+             x:Class="RPOLab.FilterPage"
+             Title="{x:Static local:Strings.FilterPage_Title}">
+    <ContentPage.Content>
+        <ScrollView
+                VerticalScrollBarVisibility="Never"
+                >
+            <StackLayout>
+                <Frame CornerRadius="7"
+                   Margin="40, 80, 40, 10"
+                   >
+                    <StackLayout>
+                        <Label Text="{x:Static local:Strings.FilterPage_Name}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Picker x:Name="filterNamePicker" 
+                            Margin="0, 2, 0, 2"
+                    >
+                            <Picker.Items>
+                                
+                            </Picker.Items>
+                        </Picker>
+
+
+                        <Label Text="{x:Static local:Strings.FilterPage_Year}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Picker x:Name="filterYearPicker" 
+                            Margin="0, 2, 0, 2"
+                    >
+                            <Picker.Items>
+                                
+                            </Picker.Items>
+                        </Picker>
+
+
+                        <Label Text="{x:Static local:Strings.FilterPage_Producer}"
+                       Margin="0, 2, 0, 2"
+                       FontSize="Medium"
+                       FontFamily="Arial"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+
+                        <Picker x:Name="filterProducerPicker" 
+                            Margin="0, 2, 0, 2"
+                            >
+                            <Picker.Items>
+                                
+                            </Picker.Items>
+                        </Picker>
+
+
+                        <Label Text="{x:Static local:Strings.FilterPage_Rating}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Picker x:Name="filterRatingPicker" 
+                            Margin="0, 2, 0, 2"
+                    >
+                            <Picker.Items>
+                                
+                            </Picker.Items>
+                        </Picker>
+                        <FlexLayout>
+                            <CheckBox IsChecked="False"
+                          x:Name="filterHasImage"
+                      />
+                            <Label Text="{x:Static local:Strings.FilterPage_HasImage}"
+                           FontFamily="Arial"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           />
+                        </FlexLayout>
+
+                        <FlexLayout>
+                            <CheckBox IsChecked="False"
+                          x:Name="filterHasVideo"
+                      />
+                            <Label Text="{x:Static local:Strings.FilterPage_HasVideo}"
+                           FontFamily="Arial"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           />
+                        </FlexLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Button x:Name="applyFilterButton"
+                    BackgroundColor="DarkTurquoise"
+                    Margin="40, 10, 40, 10"
+                    Text="{x:Static local:Strings.FilterPage_Apply}"
+                    Clicked="applyFilterButton_Clicked"
+                    />
+
+                <Button x:Name="clearFilterButton"
+                        BackgroundColor="DarkTurquoise"
+                        Margin="40, 10, 40, 10"
+                        Text="Clear"
+                        Clicked="clearFilterButton_Clicked"
+                        />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

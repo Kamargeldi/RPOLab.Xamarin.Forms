@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RPOLab.Strings"
+             mc:Ignorable="d"
+             x:Class="RPOLab.MainPage"
+             Title="{x:Static local:Strings.MainPage_Title}"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="settingsButton" 
+                     Text="{x:Static local:Strings.MainPage_Settings}"
+                     Clicked="settingsButton_Clicked"
+                     />
+        <ToolbarItem x:Name="filterButton"
+                     Text="{x:Static local:Strings.MainPage_Filter}"
+                     Clicked="filterButton_Clicked"
+                     />
+        <ToolbarItem x:Name="addNewFilm"
+                     Text="{x:Static local:Strings.MainPage_NewFilm}"
+                     Clicked="addNewFilm_Clicked"
+                     />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="stackLayout">
+        <Frame CornerRadius="5"
+               Margin="10, 10, 10, 10"
+               >
+            <StackLayout x:Name="filmContainer">
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

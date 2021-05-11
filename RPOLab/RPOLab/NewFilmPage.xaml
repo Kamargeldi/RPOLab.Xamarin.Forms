@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RPOLab.Strings"
+             mc:Ignorable="d"
+             x:Class="RPOLab.NewFilmPage"
+             Title="{x:Static local:Strings.NewPage_Title}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame CornerRadius="7"
+                   Margin="40, 80, 40, 10"
+                   >
+                    <StackLayout>
+                        <Label Text="{x:Static local:Strings.NewPage_Name}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Entry x:Name="newFilmNameEntry" 
+                            Margin="0, 2, 0, 2"
+                    />
+
+                        <Label Text="{x:Static local:Strings.NewPage_Description}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Editor x:Name="newFilmDescEditor" 
+                            Margin="0, 2, 0, 2"
+                            HeightRequest="200"        
+                        />
+
+
+                        <Label Text="{x:Static local:Strings.NewPage_Year}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Entry x:Name="newFilmYearEntry" 
+                            Margin="0, 2, 0, 2"
+                            Keyboard="Numeric"
+                    />
+
+                        <Label Text="{x:Static local:Strings.NewPage_Rating}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Picker x:Name="newFilmRatingPicker" 
+                            Margin="0, 2, 0, 2"
+                    />
+
+                        <Label Text="{x:Static local:Strings.NewPage_Language}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Entry x:Name="newFilmLanguageEntry" 
+                            Margin="0, 2, 0, 2"
+                    />
+
+                        <Label Text="{x:Static local:Strings.NewPage_Genre}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Entry x:Name="newFilmGenreEntry" 
+                            Margin="0, 2, 0, 2"
+                    />
+
+                        <Label Text="{x:Static local:Strings.NewPage_Producer}"
+                   Margin="0, 2, 0, 2"
+                   FontSize="Medium"
+                   FontFamily="Arial"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+                        <Entry x:Name="newFilmProducerEntry" 
+                            Margin="0, 2, 0, 2"
+                    />
+
+                    </StackLayout>
+                </Frame>
+
+                <Button x:Name="uploadImageButton"
+                    BackgroundColor="DarkTurquoise"
+                    Margin="40, 10, 40, 10"
+                    Text="{x:Static local:Strings.NewPage_Image}"
+                    Clicked="uploadImageButton_Clicked"
+                    />
+
+                <Button x:Name="uploadVideoButton"
+                    BackgroundColor="DarkTurquoise"
+                    Margin="40, 10, 40, 10"
+                    Text="{x:Static local:Strings.NewPage_Video}"
+                    />
+
+                <Button x:Name="createFilmButton"
+                    BackgroundColor="DarkTurquoise"
+                    Margin="40, 10, 40, 10"
+                    Text="{x:Static local:Strings.NewPage_Create}"
+                    Clicked="createFilmButton_Clicked"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
