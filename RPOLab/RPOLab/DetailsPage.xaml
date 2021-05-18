@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:RPOLab.Strings"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RPOLab.DetailsPage"
+             Title="{x:Static local:Strings.DetailsPage_Title}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"
+                         Grid.Row="0">
+                <Frame CornerRadius="30"
+                   Padding="0"
+                   Margin="10"
+                   HasShadow="true"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   BorderColor="Green"
+                   >
+                    <Image Source="{Binding ImageUrl}"
+                       Aspect="Fill"
+                       />
+                </Frame>
+
+            </StackLayout>
+            <StackLayout Padding="0"
+                             Margin="20, 10, 5, 5"
+                             Grid.Column="0"
+                             Grid.Row="1">
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static local:Strings.NewPage_Rating}"/>
+                            <Span Text=":"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Rating}"
+                       FontSize="Medium"
+                       LineBreakMode="WordWrap"/>
+                <Button Text="{x:Static local:Strings.VideoPage_Title}"
+                        BackgroundColor="DarkTurquoise"
+                        Clicked="Button_Clicked"/>
+                <Button Text="{x:Static local:Strings.DetailsPage_Map}"
+                        BackgroundColor="DarkTurquoise"/>
+            </StackLayout>
+            <StackLayout Grid.Row="0"
+                         Padding="0"
+                         Margin="5, 20, 10, 5"
+                         Grid.Column="1">
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static local:Strings.NewPage_Name}"/>
+                            <Span Text=":"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Name}"
+                       FontSize="Medium"
+                       LineBreakMode="WordWrap"/>
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static local:Strings.NewPage_Year}"/>
+                            <Span Text=":"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Year}"
+                       FontSize="Medium"
+                       LineBreakMode="WordWrap"/>
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static local:Strings.NewPage_Producer}"/>
+                            <Span Text=":"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Producer}"
+                       FontSize="Medium"
+                       LineBreakMode="WordWrap"/>
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static local:Strings.NewPage_Genre}"/>
+                            <Span Text=":"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Genre}"
+                       FontSize="Medium"
+                       LineBreakMode="WordWrap"/>
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static local:Strings.NewPage_Language}"/>
+                            <Span Text=":"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Language}"
+                       FontSize="Medium"
+                       LineBreakMode="WordWrap"/>
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

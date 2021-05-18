@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:RPOLab.Strings"
+             xmlns:settings="clr-namespace:RPOLab.Models"
              mc:Ignorable="d"
              x:Class="RPOLab.SettingsPage"
              Title="{x:Static local:Strings.SettingsPage_Title}"
@@ -14,7 +15,7 @@
                 <Label Text="{x:Static local:Strings.SettingsPage_FontName}"
                    Margin="40, 80, 40, 10"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
                 <Frame Margin="40, 10, 40, 10"
@@ -27,30 +28,10 @@
                     </Picker>
                 </Frame>
 
-                <Label Text="{x:Static local:Strings.SettingsPage_FontSize}"
-                   Margin="40, 10, 40, 10"
-                   FontSize="Medium"
-                   FontFamily="Arial"
-                   TextColor="Black"
-                   FontAttributes="Bold"
-                   />
-
-                <Frame CornerRadius="7"
-                   Margin="40, 10, 40, 10"
-                   Padding="20, 2, 20, 2"
-                   HasShadow="True"
-                   >
-                    <Picker x:Name="fontSizePicker"
-                    >
-
-                    </Picker>
-                </Frame>
-
-
                 <Label Text="{x:Static local:Strings.SettingsPage_Language}"
                    Margin="40, 10, 40, 10"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"
                    />
@@ -76,7 +57,7 @@
                           x:Name="darkModeCheker"
                       />
                         <Label Text="{x:Static local:Strings.SettingsPage_DarkMode}"
-                           FontFamily="Arial"
+                           FontFamily="{x:Static settings:StaticData.FontName}"
                            FontSize="Medium"
                            FontAttributes="Bold"
                            VerticalTextAlignment="Center"
@@ -87,6 +68,7 @@
                     Text="{x:Static local:Strings.SettingsPage_Save}"
                     Margin="40, 10, 40, 10"
                     BackgroundColor="DarkTurquoise"
+                    FontFamily="{x:Static settings:StaticData.FontName}"
                     CornerRadius="5"
                     Clicked="saveSettingsButton_Clicked"
                     />

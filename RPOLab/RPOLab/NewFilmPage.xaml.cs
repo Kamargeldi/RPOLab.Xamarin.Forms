@@ -16,6 +16,7 @@ namespace RPOLab
         Film _film;
         FireBaseService _service;
         string _imageUrl = null;
+        string _videoUrl = null;
         public NewFilmPage()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace RPOLab
             int temp;
             if (int.TryParse(newFilmYearEntry.Text, out temp))
                 _film.Year = temp;
-            if (int.TryParse((string)newFilmRatingPicker.SelectedItem, out temp))
+            if (int.TryParse(newFilmRatingPicker.SelectedItem != null ? newFilmRatingPicker.SelectedItem.ToString() : "", out temp))
                 _film.Rating = temp;
 
             if (_imageUrl != null)
@@ -55,6 +56,13 @@ namespace RPOLab
                 _film.ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png";
             }
 
+            if (_videoUrl != null)
+            {
+                _film.VideoUrl = _videoUrl;
+                _film.HasVideo = true;
+            }
+            
+
             await _service.AddFilm(_film);
             await Navigation.PopAsync();
         }
@@ -63,6 +71,12 @@ namespace RPOLab
         {
             var image = await _service.PickImage();
             _imageUrl = await _service.UploadImage(image);
+        }
+
+        private async void uploadVideoButton_Clicked(object sender, EventArgs e)
+        {
+            var video = await _service.PickVideo();
+            _videoUrl = await _service.UploadVideo(video);
         }
     }
 }

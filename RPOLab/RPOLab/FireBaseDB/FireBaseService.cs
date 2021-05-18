@@ -67,16 +67,42 @@ namespace RPOLab.FireBaseDB
                 return null;
             }
         }
+
+        public async Task<string> UploadVideo(FileData file)
+        {
+
+
+            if (file != null)
+            {
+                Guid guid = Guid.NewGuid();
+                await storage.Child("videos")
+                    .Child(guid.ToString() + Path.GetExtension(file.FileName))
+                    .PutAsync(new MemoryStream(file.DataArray));
+
+                var url = await storage.Child("videos")
+                    .Child(guid.ToString() + Path.GetExtension(file.FileName))
+                    .GetDownloadUrlAsync();
+
+                return url;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public async Task<FileData> PickImage()
         {
             var fileData =  await CrossFilePicker.Current.PickFile();
             return fileData;
         }
-        public List<int> GetFontSizes()
+
+        public async Task<FileData> PickVideo()
         {
-            return client.Child("fontSizes")
-                .OnceAsync<int>().Result.Select(x => x.Object).ToList();
+            var fileData = await CrossFilePicker.Current.PickFile();
+            return fileData;
         }
+        
         public List<string> GetFontNames()
         {
             return client.Child("fontNames")
@@ -119,11 +145,17 @@ namespace RPOLab.FireBaseDB
         public List<Film> GetFilteredFilms(Filter filter)
         {
             IEnumerable<Film> films = GetFilms();
-            films = films.Where(x => x.Name == filter.Name);
-            films = films.Where(x => x.Producer == filter.Producer);
-            films = films.Where(x => x.Year == filter.Year);
-            films = films.Where(x => x.Rating == filter.Rating);
+            if (filter.Name != "")
+                films = films.Where(x => x.Name == filter.Name);
+            if (filter.Producer != "")
+                films = films.Where(x => x.Producer == filter.Producer);
+            if (filter.Year != 0)
+                films = films.Where(x => x.Year == filter.Year);
+            if (filter.Rating != 0)
+                films = films.Where(x => x.Rating == filter.Rating);
+
             films = films.Where(x => x.HasImage == filter.HasImage);
+            films = films.Where(x => x.HasVideo == filter.HasVideo);
 
             return films.ToList();
         }

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DetailsPage_Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="DetailsPage_Title" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="FilterPage_Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
@@ -206,5 +212,8 @@
   </data>
   <data name="SettingsPage_Title" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="VideoPage_Title" xml:space="preserve">
+    <value>Video player</value>
   </data>
 </root>

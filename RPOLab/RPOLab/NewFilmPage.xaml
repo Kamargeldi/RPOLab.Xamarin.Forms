@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:RPOLab.Strings"
+             xmlns:settings="clr-namespace:RPOLab.Models"
              mc:Ignorable="d"
              x:Class="RPOLab.NewFilmPage"
              Title="{x:Static local:Strings.NewPage_Title}">
@@ -17,7 +18,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Name}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -28,7 +29,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Description}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -41,7 +42,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Year}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -53,7 +54,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Rating}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -64,7 +65,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Language}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -75,7 +76,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Genre}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -86,7 +87,7 @@
                         <Label Text="{x:Static local:Strings.NewPage_Producer}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -102,11 +103,14 @@
                     Margin="40, 10, 40, 10"
                     Text="{x:Static local:Strings.NewPage_Image}"
                     Clicked="uploadImageButton_Clicked"
+                    FontFamily="{x:Static settings:StaticData.FontName}"
                     />
 
                 <Button x:Name="uploadVideoButton"
                     BackgroundColor="DarkTurquoise"
+                    Clicked="uploadVideoButton_Clicked"
                     Margin="40, 10, 40, 10"
+                    FontFamily="{x:Static settings:StaticData.FontName}"
                     Text="{x:Static local:Strings.NewPage_Video}"
                     />
 
@@ -115,6 +119,7 @@
                     Margin="40, 10, 40, 10"
                     Text="{x:Static local:Strings.NewPage_Create}"
                     Clicked="createFilmButton_Clicked"
+                    FontFamily="{x:Static settings:StaticData.FontName}"
                     />
             </StackLayout>
         </ScrollView>

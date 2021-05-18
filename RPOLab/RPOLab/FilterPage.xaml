@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:settings="clr-namespace:RPOLab.Models"
              xmlns:local="clr-namespace:RPOLab.Strings"
              mc:Ignorable="d"
              x:Class="RPOLab.FilterPage"
@@ -11,7 +12,9 @@
         <ScrollView
                 VerticalScrollBarVisibility="Never"
                 >
-            <StackLayout>
+            <StackLayout
+                BackgroundColor="{x:Static settings:StaticData.DarkModeBackGroundColor}"
+                >
                 <Frame CornerRadius="7"
                    Margin="40, 80, 40, 10"
                    >
@@ -19,7 +22,7 @@
                         <Label Text="{x:Static local:Strings.FilterPage_Name}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -35,7 +38,7 @@
                         <Label Text="{x:Static local:Strings.FilterPage_Year}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -51,7 +54,7 @@
                         <Label Text="{x:Static local:Strings.FilterPage_Producer}"
                        Margin="0, 2, 0, 2"
                        FontSize="Medium"
-                       FontFamily="Arial"
+                       FontFamily="{x:Static settings:StaticData.FontName}"
                        TextColor="Black"
                        FontAttributes="Bold"/>
 
@@ -67,7 +70,7 @@
                         <Label Text="{x:Static local:Strings.FilterPage_Rating}"
                    Margin="0, 2, 0, 2"
                    FontSize="Medium"
-                   FontFamily="Arial"
+                   FontFamily="{x:Static settings:StaticData.FontName}"
                    TextColor="Black"
                    FontAttributes="Bold"/>
 
@@ -83,7 +86,7 @@
                           x:Name="filterHasImage"
                       />
                             <Label Text="{x:Static local:Strings.FilterPage_HasImage}"
-                           FontFamily="Arial"
+                           FontFamily="{x:Static settings:StaticData.FontName}"
                            FontSize="Medium"
                            FontAttributes="Bold"
                            VerticalTextAlignment="Center"
@@ -95,7 +98,7 @@
                           x:Name="filterHasVideo"
                       />
                             <Label Text="{x:Static local:Strings.FilterPage_HasVideo}"
-                           FontFamily="Arial"
+                           FontFamily="{x:Static settings:StaticData.FontName}"
                            FontSize="Medium"
                            FontAttributes="Bold"
                            VerticalTextAlignment="Center"
@@ -109,13 +112,15 @@
                     Margin="40, 10, 40, 10"
                     Text="{x:Static local:Strings.FilterPage_Apply}"
                     Clicked="applyFilterButton_Clicked"
+                    FontFamily="{x:Static settings:StaticData.FontName}"
                     />
 
                 <Button x:Name="clearFilterButton"
                         BackgroundColor="DarkTurquoise"
                         Margin="40, 10, 40, 10"
-                        Text="Clear"
+                        Text="{x:Static local:Strings.FilterPage_Clear}"
                         Clicked="clearFilterButton_Clicked"
+                        FontFamily="{x:Static settings:StaticData.FontName}"
                         />
             </StackLayout>
         </ScrollView>

@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:settings="clr-namespace:RPOLab.Models"
              xmlns:local="clr-namespace:RPOLab.Strings"
              mc:Ignorable="d"
              x:Class="RPOLab.MainPage"
              Title="{x:Static local:Strings.MainPage_Title}"
              >
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="settingsButton" 
+        <ToolbarItem x:Name="settingsButton"
                      Text="{x:Static local:Strings.MainPage_Settings}"
                      Clicked="settingsButton_Clicked"
                      />
@@ -23,7 +24,9 @@
                      />
     </ContentPage.ToolbarItems>
 
-    <StackLayout x:Name="stackLayout">
+    <StackLayout x:Name="stackLayout"
+        BackgroundColor="{x:Static settings:StaticData.DarkModeBackGroundColor}"
+        >
         <Frame CornerRadius="5"
                Margin="10, 10, 10, 10"
                >

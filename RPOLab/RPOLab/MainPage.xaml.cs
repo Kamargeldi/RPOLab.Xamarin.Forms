@@ -32,18 +32,17 @@ namespace RPOLab
                 SelectionMode = ListViewSelectionMode.None,
                 ItemTemplate = new DataTemplate(() =>
                 {
-                    var filmItem = new RPOLab.Views.FilmView();
-                    return new ViewCell()
+                    var cell = new ViewCell();
+                    cell.View = new Frame()
                     {
-                        View = new Frame()
-                        {
-                            HasShadow = true,
-                            Margin = new Thickness(2, 4, 2, 4),
-                            Padding = 0,
-                            Content = filmItem,
-                            CornerRadius = 20
-                        },       
+                        HasShadow = true,
+                        Margin = new Thickness(2, 4, 2, 4),
+                        Padding = 0,
+                        Content = new RPOLab.Views.FilmView(),
+                        CornerRadius = 20
                     };
+
+                    return cell;
                 })
             };
 
@@ -74,6 +73,7 @@ namespace RPOLab
         private void list_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var tappedItem = e.Item as Film;
+            Navigation.PushAsync(new DetailsPage(tappedItem) { BindingContext = tappedItem });
         }
 
         private async void settingsButton_Clicked(object sender, EventArgs e)

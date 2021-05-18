@@ -26,11 +26,9 @@ namespace RPOLab
         {
             base.OnAppearing();
 
-            fontSizePicker.ItemsSource = _service.GetFontSizes();
             fontNamePicker.ItemsSource = _service.GetFontNames();
             languagePicker.ItemsSource = _service.GetLanguages();
 
-            fontSizePicker.SelectedIndex = fontSizePicker.Items.IndexOf(_settings.FontSize.ToString());
             fontNamePicker.SelectedIndex = fontNamePicker.Items.IndexOf(_settings.FontName);
             languagePicker.SelectedIndex = languagePicker.Items.IndexOf(_settings.Language);
             darkModeCheker.IsChecked = _settings.DarkMode;
@@ -41,7 +39,6 @@ namespace RPOLab
             Settings settings = new Settings();
             settings.DarkMode = darkModeCheker.IsChecked;
             settings.FontName = fontNamePicker.Items[fontNamePicker.SelectedIndex];
-            settings.FontSize = int.Parse(fontSizePicker.Items[fontSizePicker.SelectedIndex]);
             settings.Language = languagePicker.Items[languagePicker.SelectedIndex];
             await _service.SaveSettings(settings);
             await Navigation.PopAsync();

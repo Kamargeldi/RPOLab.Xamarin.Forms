@@ -7,11 +7,16 @@
              mc:Ignorable="d"
              x:Class="RPOLab.Views.FilmView">
   <ContentView.Content>
-        <StackLayout
-            Orientation="Horizontal"
+        <Grid
             Padding="4"
-            Margin="0">
-            <Frame
+            Margin="0"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="0"
                 HasShadow = "true"
                 Padding = "0"
                 CornerRadius = "20"
@@ -27,8 +32,8 @@
 
 
             <StackLayout
+                Grid.Column="1"
                 Margin="5, 0, 0, 0"
-                WidthRequest="170"
                 >
                 <FlexLayout>
                     <Label FontAttributes="Bold"
@@ -76,9 +81,68 @@
                            LineBreakMode="TailTruncation"/>
                 </FlexLayout>
             </StackLayout>
-            <StackLayout>
-                
+            <StackLayout
+                VerticalOptions="End"
+                Grid.Column="2"
+                Padding="1, 2, 5, 2"
+                Margin="0, 0, 2, 0"
+                >
+                <Frame CornerRadius="5"
+                       Padding="0"
+                       x:Name="r5"
+                       IsVisible="{Binding R5}"
+                       >
+                    <Label
+                       Text=""
+                       BackgroundColor="#0ACC0A"
+                       HeightRequest="10"
+                       WidthRequest="20"
+                       />
+                </Frame>
+                <Frame CornerRadius="5"
+                       Padding="0"
+                       x:Name="r4"
+                       IsVisible="{Binding R4}"
+                       >
+                    <Label Text=""
+                       BackgroundColor="#75EC27"
+                       HeightRequest="10"
+                       WidthRequest="20"
+                       />
+                </Frame>
+                <Frame CornerRadius="5"
+                       Padding="0"
+                       x:Name="r3"
+                       IsVisible="{Binding R3}"
+                       >
+                    <Label Text=""
+                       BackgroundColor="LightGreen"
+                       HeightRequest="10"
+                       WidthRequest="20"
+                       />
+                </Frame>
+                <Frame CornerRadius="5"
+                       Padding="0"
+                       x:Name="r2"
+                       IsVisible="{Binding R2}"
+                       >
+                    <Label Text=""
+                       BackgroundColor="Orange"
+                       HeightRequest="10"
+                       WidthRequest="20"
+                       />
+                </Frame>
+                <Frame CornerRadius="5"
+                       Padding="0"
+                       IsVisible="{Binding R1}"
+                       x:Name="r1">
+                    <Label Text=""
+                       BackgroundColor="OrangeRed"
+                       HeightRequest="10"
+                       WidthRequest="20"
+                       />
+                </Frame>
             </StackLayout>
-        </StackLayout>
+        </Grid>
   </ContentView.Content>
 </ContentView>

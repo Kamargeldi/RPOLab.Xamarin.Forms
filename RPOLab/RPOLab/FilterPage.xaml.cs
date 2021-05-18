@@ -49,10 +49,10 @@ namespace RPOLab
 
             filters.HasImage = filterHasImage.IsChecked;
             filters.HasVideo = filterHasVideo.IsChecked;
-            filters.Name = filterNamePicker.Items[filterNamePicker.SelectedIndex];
-            filters.Producer = filterProducerPicker.Items[filterProducerPicker.SelectedIndex];
-            filters.Rating = int.Parse(filterRatingPicker.Items[filterRatingPicker.SelectedIndex]);
-            filters.Year = int.Parse(filterYearPicker.Items[filterYearPicker.SelectedIndex]);
+            filters.Name = filterNamePicker.SelectedIndex != -1 ? filterNamePicker.Items[filterNamePicker.SelectedIndex] : "";
+            filters.Producer = filterProducerPicker.SelectedIndex != -1 ? filterProducerPicker.Items[filterProducerPicker.SelectedIndex] : "";
+            filters.Rating = filterRatingPicker.SelectedIndex != -1 ? int.Parse(filterRatingPicker.Items[filterRatingPicker.SelectedIndex]) : 0;
+            filters.Year = filterYearPicker.SelectedIndex != -1 ? int.Parse(filterYearPicker.Items[filterYearPicker.SelectedIndex]): 0;
             filters.Cleared = false;
 
             await _service.SaveFilters(filters);
@@ -62,12 +62,12 @@ namespace RPOLab
         private async void clearFilterButton_Clicked(object sender, EventArgs e)
         {
             Filter filters = new Filter();
-            filters.HasImage = filterHasImage.IsChecked;
-            filters.HasVideo = filterHasVideo.IsChecked;
-            filters.Name = filterNamePicker.Items[filterNamePicker.SelectedIndex];
-            filters.Producer = filterProducerPicker.Items[filterProducerPicker.SelectedIndex];
-            filters.Rating = int.Parse(filterRatingPicker.Items[filterRatingPicker.SelectedIndex]);
-            filters.Year = int.Parse(filterYearPicker.Items[filterYearPicker.SelectedIndex]);
+            filters.HasImage = false;
+            filters.HasVideo = false;
+            filters.Name = null;
+            filters.Producer = null;
+            filters.Rating = 0;
+            filters.Year = 0;
             filters.Cleared = true;
 
             await _service.SaveFilters(filters);

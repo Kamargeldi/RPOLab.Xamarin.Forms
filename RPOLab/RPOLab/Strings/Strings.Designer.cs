@@ -61,6 +61,24 @@ namespace RPOLab.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        internal static string DetailsPage_Map {
+            get {
+                return ResourceManager.GetString("DetailsPage_Map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        internal static string DetailsPage_Title {
+            get {
+                return ResourceManager.GetString("DetailsPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         internal static string FilterPage_Apply {
@@ -327,6 +345,15 @@ namespace RPOLab.Strings {
         internal static string SettingsPage_Title {
             get {
                 return ResourceManager.GetString("SettingsPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video player.
+        /// </summary>
+        internal static string VideoPage_Title {
+            get {
+                return ResourceManager.GetString("VideoPage_Title", resourceCulture);
             }
         }
     }

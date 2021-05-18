@@ -9,7 +9,29 @@ namespace RPOLab
     {
         public App()
         {
-            var lang = new FireBaseDB.FireBaseService().GetSettings().Language;
+            var settings = new FireBaseDB.FireBaseService().GetSettings();
+            var lang = settings.Language;
+            var darkMode = settings.DarkMode;
+            if (darkMode)
+            {
+                RPOLab.Models.StaticData.DarkModeBackGroundColor = Color.Gray;
+                RPOLab.Models.StaticData.DarkModeNavColor = Color.Gray;
+            }
+            else
+            {
+                RPOLab.Models.StaticData.DarkModeNavColor = Color.DarkTurquoise;
+                RPOLab.Models.StaticData.DarkModeBackGroundColor = Color.White;
+            }
+
+            if (settings.FontName == "Serif Monospace")
+            {
+                RPOLab.Models.StaticData.FontName = "serif-monospace";
+            } 
+            else
+            {
+                RPOLab.Models.StaticData.FontName = settings.FontName;
+            }
+
             if (lang == "English")
             {
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
@@ -22,7 +44,7 @@ namespace RPOLab
             InitializeComponent();
 
             var mainPage = new NavigationPage(new MainPage());
-            mainPage.BarBackgroundColor = Color.DarkTurquoise;
+            mainPage.BarBackgroundColor = RPOLab.Models.StaticData.DarkModeNavColor; ;
             mainPage.BarTextColor = Color.White;
             MainPage = mainPage;
         }

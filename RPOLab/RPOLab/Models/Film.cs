@@ -13,7 +13,20 @@ namespace RPOLab.Models
 
         public int Year { get; set; }
 
-        public int Rating { get; set; }
+        private int _rating;
+        public int Rating
+        {
+            get => _rating;
+            set
+            {
+                this._rating = value;
+                R1 = _rating > 0;
+                R2 = _rating > 1;
+                R3 = _rating > 2;
+                R4 = _rating > 3;
+                R5 = _rating > 4;
+            }
+        }
 
         public string Language { get; set; }
 
@@ -32,5 +45,16 @@ namespace RPOLab.Models
 
         [JsonIgnore]
         public string Key { get; set; }
+        
+        [JsonIgnore]
+        public bool R1 { get; set; }
+        [JsonIgnore]
+        public bool R2 { get; set; }
+        [JsonIgnore]
+        public bool R3 { get; set; }
+        [JsonIgnore]
+        public bool R4 { get; set; }
+        [JsonIgnore]
+        public bool R5 { get; set; }
     }
 }
